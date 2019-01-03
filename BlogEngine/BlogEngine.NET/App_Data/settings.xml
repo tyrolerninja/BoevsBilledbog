@@ -24,7 +24,7 @@
   <contactformmessage>&lt;p&gt;I'll answer the mail as soon as I can.&lt;/p&gt;</contactformmessage>
   <searchbuttontext>Search</searchbuttontext>
   <showincludecommentsoption>False</showincludecommentsoption>
-  <createblogonselfregistration>False</createblogonselfregistration>
+  <createblogonselfregistration>True</createblogonselfregistration>
   <enablewebsiteincomments>True</enablewebsiteincomments>
   <enablecontactattachments>False</enablecontactattachments>
   <blogrollmaxlength>23</blogrollmaxlength>
@@ -56,7 +56,7 @@
   <commentprovider>BlogEngine</commentprovider>
   <postsperfeed>3</postsperfeed>
   <sendmailoncomment>True</sendmailoncomment>
-  <culture>Auto</culture>
+  <culture>da</culture>
   <remotemaxfilesize>524288</remotemaxfilesize>
   <redirecttoremovefileextension>False</redirecttoremovefileextension>
   <syndicationformat>Rss</syndicationformat>
@@ -71,13 +71,13 @@
   <smtpserverport>587</smtpserverport>
   <smtppassword>password</smtppassword>
   <iscommentnestingenabled>True</iscommentnestingenabled>
-  <timestamppostlinks>False</timestamppostlinks>
+  <timestamppostlinks>True</timestamppostlinks>
   <avatar>none</avatar>
   <timezoneid>UTC</timezoneid>
   <moderationtype>Auto</moderationtype>
   <enablerecaptchaoncontactform>False</enablerecaptchaoncontactform>
   <enableoptimization>False</enableoptimization>
-  <name>Name of the blog</name>
+  <name>Bøvs' Billedbog</name>
   <pageoptionscustomfields>True</pageoptionscustomfields>
   <enablepingbackreceive>True</enablepingbackreceive>
   <showlivepreview>False</showlivepreview>
@@ -94,7 +94,7 @@
   <commentreportmistakes>False</commentreportmistakes>
   <postoptionsdescription>True</postoptionsdescription>
   <geocodinglongitude>0</geocodinglongitude>
-  <selfregistrationinitialrole>Editors</selfregistrationinitialrole>
+  <selfregistrationinitialrole>Readers</selfregistrationinitialrole>
   <enableselfregistration>False</enableselfregistration>
   <blogrollupdateminutes>60</blogrollupdateminutes>
   <securityvalidationkey>ede308e723ae42aab289b04350133355accaa0f0da9743e7a8529a0cbbf5bceee5bcafc4eac741f68d2d63d80e21bf8e</securityvalidationkey>

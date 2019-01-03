@@ -19,7 +19,7 @@ namespace Resources {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option or rebuild the Visual Studio project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Web.Application.StronglyTypedResourceProxyBuilder", "14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Web.Application.StronglyTypedResourceProxyBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class labels {
@@ -1974,6 +1974,15 @@ namespace Resources {
         internal static string defaultPostCategory {
             get {
                 return ResourceManager.GetString("defaultPostCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to default Readers role.
+        /// </summary>
+        internal static string defaultReadersRole {
+            get {
+                return ResourceManager.GetString("defaultReadersRole", resourceCulture);
             }
         }
         

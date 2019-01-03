@@ -162,13 +162,30 @@ namespace BlogEngine.Core
         private static string _editorsRole;
 
         /// <summary>
-        /// The role that represents all non-authenticated users.
+        /// The role that represents all editors.
         /// </summary>
         public static string EditorsRole
         {
             get
             {
                 return _editorsRole ?? (_editorsRole = WebConfigurationManager.AppSettings["BlogEngine.EditorsRole"] ?? "Editors");
+            }
+        }
+
+        #endregion
+
+        #region EditorsRole
+
+        private static string _readersRole;
+
+        /// <summary>
+        /// The role that represents all readers of the blog.
+        /// </summary>
+        public static string ReadersRole
+        {
+            get
+            {
+                return _readersRole ?? (_readersRole = WebConfigurationManager.AppSettings["BlogEngine.ReadersRole"] ?? "Readers");
             }
         }
 
@@ -185,7 +202,8 @@ namespace BlogEngine.Core
         {
             if (roleName.Equals(AdministratorRole, StringComparison.OrdinalIgnoreCase) ||
                 roleName.Equals(AnonymousRole, StringComparison.OrdinalIgnoreCase) ||
-                roleName.Equals(EditorsRole, StringComparison.OrdinalIgnoreCase))
+                roleName.Equals(EditorsRole, StringComparison.OrdinalIgnoreCase) ||
+                roleName.Equals(ReadersRole, StringComparison.OrdinalIgnoreCase))
             {
                 return true;
             }

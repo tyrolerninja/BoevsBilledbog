@@ -183,8 +183,8 @@ namespace BlogEngine.Core.Data
             ns.SelfRegistrationInitialRole = bs.SelfRegistrationInitialRole;
             if (string.IsNullOrEmpty(ns.SelfRegistrationInitialRole))
             {
-                // set to default editor role if not set in settings
-                ns.SelfRegistrationInitialRole = BlogConfig.EditorsRole;
+                // set to default reader role if not set in settings
+                ns.SelfRegistrationInitialRole = BlogConfig.ReadersRole;
             }
 
             // feed

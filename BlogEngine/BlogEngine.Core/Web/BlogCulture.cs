@@ -324,6 +324,7 @@ namespace BlogEngine.Core.Web
             AddResource("days");
             AddResource("defaultAnonymousRole");
             AddResource("defaultEditorsRole");
+            AddResource("defaultReadersRole");
             AddResource("defaultFeedOutput");
             AddResource("defaultTextShownInSearchField");
             AddResource("delete");

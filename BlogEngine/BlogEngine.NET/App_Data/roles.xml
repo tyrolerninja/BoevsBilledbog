@@ -11,6 +11,10 @@
     <users />
   </role>
   <role>
+    <name>Readers</name>
+    <users />
+  </role>
+  <role>
     <name>Anonymous</name>
     <users />
   </role>

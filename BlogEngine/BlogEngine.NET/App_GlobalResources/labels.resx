@@ -2594,4 +2594,7 @@
   <data name="changeName" xml:space="preserve">
     <value>Change Name</value>
   </data>
+  <data name="defaultReadersRole" xml:space="preserve">
+    <value>default Readers role</value>
+  </data>
 </root>
