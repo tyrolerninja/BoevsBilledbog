@@ -74,7 +74,7 @@
         <% if (postCategory.Length > 0)
         {%><span class="post-category"><i class="fa fa-folder-open"></i> <%=postCategory %></span>
         <% } %>
-            <div class="dropdown post-share float-md-right">
+            <%--<div class="dropdown post-share float-md-right">
                 <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-share-alt"></i>share</a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
                     <a class="dropdown-item item-fb" href="https://www.addtoany.com/add_to/facebook?linkurl=<%=Post.AbsoluteLink %>&amp;linkname=<%=postTitle %>" target="_blank"><i class="fa fa-facebook-square"></i>Facebook</a>
@@ -85,7 +85,7 @@
                     <a class="dropdown-item item-em" href="https://www.addtoany.com/add_to/email?linkurl=<%=Post.AbsoluteLink %>&amp;linkname=<%=postTitle %>" target="_blank"><i class="fa fa-envelope-square"></i>Email</a>
                     <a class="dropdown-item item-em" href="https://www.addtoany.com/share?linkurl=<%=Post.AbsoluteLink %>&amp;linkname=<%=postTitle %>" target="_blank"><i class="fa fa-plus-square"></i>Share...</a>
                 </div>
-            </div>
+            </div>--%>
         </div>
     </header>
     <section class="post-body content-stlye">

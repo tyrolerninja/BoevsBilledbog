@@ -2,7 +2,7 @@
 <settings>
   <showpostnavigation>True</showpostnavigation>
   <enablehttpcompression>False</enablehttpcompression>
-  <emailsubjectprefix>Weblog</emailsubjectprefix>
+  <emailsubjectprefix>Asbjørns Billedbog</emailsubjectprefix>
   <htmlheader />
   <theme>Standard</theme>
   <facebooklanguage>en_US</facebooklanguage>
@@ -24,7 +24,7 @@
   <contactformmessage>&lt;p&gt;I'll answer the mail as soon as I can.&lt;/p&gt;</contactformmessage>
   <searchbuttontext>Search</searchbuttontext>
   <showincludecommentsoption>False</showincludecommentsoption>
-  <createblogonselfregistration>True</createblogonselfregistration>
+  <createblogonselfregistration>False</createblogonselfregistration>
   <enablewebsiteincomments>True</enablewebsiteincomments>
   <enablecontactattachments>False</enablecontactattachments>
   <blogrollmaxlength>23</blogrollmaxlength>
@@ -77,7 +77,7 @@
   <moderationtype>Auto</moderationtype>
   <enablerecaptchaoncontactform>False</enablerecaptchaoncontactform>
   <enableoptimization>False</enableoptimization>
-  <name>Bøvs' Billedbog</name>
+  <name>Asbjørns Billedbog</name>
   <pageoptionscustomfields>True</pageoptionscustomfields>
   <enablepingbackreceive>True</enablepingbackreceive>
   <showlivepreview>False</showlivepreview>
@@ -95,10 +95,10 @@
   <postoptionsdescription>True</postoptionsdescription>
   <geocodinglongitude>0</geocodinglongitude>
   <selfregistrationinitialrole>Readers</selfregistrationinitialrole>
-  <enableselfregistration>False</enableselfregistration>
+  <enableselfregistration>True</enableselfregistration>
   <blogrollupdateminutes>60</blogrollupdateminutes>
   <securityvalidationkey>ede308e723ae42aab289b04350133355accaa0f0da9743e7a8529a0cbbf5bceee5bcafc4eac741f68d2d63d80e21bf8e</securityvalidationkey>
   <requiresslmetaweblogapi>False</requiresslmetaweblogapi>
-  <enablerating>True</enablerating>
+  <enablerating>False</enablerating>
   <enablecommentsearch>True</enablecommentsearch>
 </settings>

@@ -81,7 +81,6 @@
             </li>
                     <% } %>
                     <li><a href="<%=Utils.AbsoluteWebRoot %>archive"><%=Resources.labels.archive %></a></li>
-                    <li><a href="<%=Utils.AbsoluteWebRoot %>contact"><%=Resources.labels.contact %></a></li>
                     <li><a runat="server" id="aLogin"><span id="aLoginText" runat="server"></span></a></li>
                 </ul>
                 <blog:WidgetZone ID="WidgetZone2" runat="server" ZoneName="sidebar Post" />
@@ -95,7 +94,7 @@
         <!-- START FOOTER -->
         <div class="container container-footer">
             <footer class="blog-footer ">
-                <ul class="nav blog-social mx-auto justify-content-center">
+                <%--<ul class="nav blog-social mx-auto justify-content-center">
                     <li><a class="item-fb" data-toggle="tooltip" title="follow on Facebook" target="_blank" href="[CUSTOMFIELD|THEME|Standard|Facebook Account|#/]" rel="external nofollow"><i class="fa fa-facebook"></i></a></li>
                     <li><a class="item-tw" data-toggle="tooltip" title="follow on Twitter" target="_blank" href="[CUSTOMFIELD|THEME|Standard|Twitter Account|#/]" rel="external nofollow"><i class="fa fa-twitter"></i></a></li>
                     <li><a class="item-gp" data-toggle="tooltip" title="follow on Google +" target="_blank" href="[CUSTOMFIELD|THEME|Standard|Google Plus Account|#/]" rel="external nofollow"><i class="fa fa-google-plus"></i></a></li>
@@ -104,7 +103,7 @@
                     <li><a class="item-yt" data-toggle="tooltip" title="follow on YouTube" target="_blank" href="[CUSTOMFIELD|THEME|Standard|Youtube Account|/]" rel="external nofollow"><i class="fa fa-youtube"></i></a></li>
                     <li><a class="item-pi" data-toggle="tooltip" title="follow on Pinterest" target="_blank" href="[CUSTOMFIELD|THEME|Standard|Pinterest Account|/]" rel="external nofollow"><i class="fa fa-pinterest"></i></a></li>
                     <li><a class="item-gb" data-toggle="tooltip" title="follow on GitHub" target="_blank" href="[CUSTOMFIELD|THEME|Standard|Github Account|/]" rel="external nofollow"><i class="fa fa-git"></i></a></li>
-                </ul>
+                </ul>--%>
                 <div class="blog-copyright mx-auto mt-3 text-center">
                     <span class="d-block">&copy; <%=DateTime.Now.Year %></span>
                     <span>Designed by <a href="http://blogengine.io/themes/" rel="nofollow" target="_blank">BlogEngine</a></span>

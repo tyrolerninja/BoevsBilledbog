@@ -12,7 +12,8 @@
   </role>
   <role>
     <name>Readers</name>
-    <users />
+    <users>
+    </users>
   </role>
   <role>
     <name>Anonymous</name>

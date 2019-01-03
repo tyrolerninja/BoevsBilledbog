@@ -100,10 +100,10 @@ namespace BlogEngine.Core.Web
         /// </summary>
         /// <param name="context">The context.</param>
         /// <param name="url">The URL string.</param>
-        public static void RewriteContact(HttpContext context, string url)
-        {
-            RewritePhysicalPageGeneric(context, url, "contact.aspx");
-        }
+        //public static void RewriteContact(HttpContext context, string url)
+        //{
+        //    RewritePhysicalPageGeneric(context, url, "contact.aspx");
+        //}
 
         /// <summary>
         /// Rewrites the archive page.

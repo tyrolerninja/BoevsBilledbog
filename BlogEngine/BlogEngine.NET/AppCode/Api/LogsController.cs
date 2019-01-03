@@ -55,35 +55,20 @@ public class LogsController : ApiController
     {
         string fileLocation = HostingEnvironment.MapPath(Path.Combine(BlogConfig.StorageLocation, "logger.txt"));
         var items = new List<SelectOption>();
-    
+
         if (File.Exists(fileLocation))
         {
             using (var sw = new StreamReader(fileLocation))
             {
                 string line;
-                string logItem = "";
                 int count = 1;
                 while ((line = sw.ReadLine()) != null)
                 {
-                    if (line.Contains("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*"))
-                    {
-                        // new log item
-                        if (!string.IsNullOrEmpty(logItem))
-                        {
-                            var item = new SelectOption();
-                            item.OptionName = "Line" + count.ToString();
-                            item.OptionValue = logItem;
-                            items.Add(item);
-                            logItem = "";
-                            count++;
-                        }
-                    }
-                    else
-                    {
-                        // append line to log item
-                        logItem = logItem + line + "<br/>";
-                    }
-                    
+                    var item = new SelectOption();
+                    item.OptionName = "Line" + count;
+                    item.OptionValue = line + "<br/>";
+                    items.Add(item);
+                    count++;
                 }
                 sw.Close();
                 return items;

@@ -283,7 +283,7 @@ namespace BlogEngine.Core.Web.Controls
 
         private bool PageMasterExists => FilePathContains("page.aspx") ||
                                 FilePathContains("archive.aspx") ||
-                                FilePathContains("contact.aspx") ||
+                                //FilePathContains("contact.aspx") ||
                                 FilePathContains("error.aspx") ||
                                 FilePathContains("error404.aspx") ||
                                 FilePathContains("search.aspx");

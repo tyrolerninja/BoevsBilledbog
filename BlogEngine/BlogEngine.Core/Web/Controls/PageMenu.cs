@@ -63,7 +63,7 @@ namespace BlogEngine.Core.Web.Controls
             HtmlGenericControl ul = GetChildren(Guid.Empty);
 
             // items that will be appended to the end of menu list
-            AddMenuItem(ul, Contact, Utils.RelativeWebRoot + "contact.aspx");
+            //AddMenuItem(ul, Contact, Utils.RelativeWebRoot + "contact.aspx");
 
             if (Security.IsAuthenticated)
             {

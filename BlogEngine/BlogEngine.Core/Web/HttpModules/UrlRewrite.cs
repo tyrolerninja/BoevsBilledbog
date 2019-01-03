@@ -127,7 +127,7 @@
                 url.Contains("/CATEGORY/") ||
                 url.Contains("/AUTHOR/") ||
                 url.Contains("/CALENDAR/") ||
-                url.StartsWith(blogInstance.RelativeWebRoot + "contact.aspx", StringComparison.OrdinalIgnoreCase) ||
+                //url.StartsWith(blogInstance.RelativeWebRoot + "contact.aspx", StringComparison.OrdinalIgnoreCase) ||
                 url.StartsWith(blogInstance.RelativeWebRoot + "search.aspx", StringComparison.OrdinalIgnoreCase) ||
                 url.StartsWith(blogInstance.RelativeWebRoot + "archive.aspx", StringComparison.OrdinalIgnoreCase))
             { 
@@ -191,10 +191,10 @@
             {
                 UrlRules.RewriteBlog(context, url);
             }
-            else if (BlogSettings.Instance.RemoveExtensionsFromUrls && path.StartsWith(blogInstance.RelativeWebRoot + "contact", StringComparison.OrdinalIgnoreCase) && string.IsNullOrWhiteSpace(Path.GetExtension(path)))
-            {
-                UrlRules.RewriteContact(context, url);
-            }
+            //else if (BlogSettings.Instance.RemoveExtensionsFromUrls && path.StartsWith(blogInstance.RelativeWebRoot + "contact", StringComparison.OrdinalIgnoreCase) && string.IsNullOrWhiteSpace(Path.GetExtension(path)))
+            //{
+            //    UrlRules.RewriteContact(context, url);
+            //}
             else if (BlogSettings.Instance.RemoveExtensionsFromUrls && path.StartsWith(blogInstance.RelativeWebRoot + "archive", StringComparison.OrdinalIgnoreCase) && string.IsNullOrWhiteSpace(Path.GetExtension(path)))
             {
                 UrlRules.RewriteArchive(context, url);

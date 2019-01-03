@@ -79,11 +79,11 @@
                 // writer.WriteEndElement();
 
                 // Contact
-                writer.WriteStartElement("url");
-                writer.WriteElementString("loc", $"{Utils.AbsoluteWebRoot}contact.aspx");
-                writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture));
-                writer.WriteElementString("changefreq", "monthly");
-                writer.WriteEndElement();
+                //writer.WriteStartElement("url");
+                //writer.WriteElementString("loc", $"{Utils.AbsoluteWebRoot}contact.aspx");
+                //writer.WriteElementString("lastmod", DateTime.Now.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture));
+                //writer.WriteElementString("changefreq", "monthly");
+                //writer.WriteEndElement();
 
                 // Blog
                 if (Page.GetFrontPage() != null)

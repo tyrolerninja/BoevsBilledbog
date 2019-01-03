@@ -205,16 +205,16 @@ namespace BlogEngine.Core
 
                 // Check that the anonymous role is set up properly. If no rights
                 // are found, then the defaults need to be set.
-                if (!GetRights(anonymousRole).Any())
-                {
-                    List<Rights> defaultRoleRights = GetDefaultRights(anonymousRole);
-                    foreach (Rights rights in defaultRoleRights)
-                    {
-                        Right.rightsByFlag[rights].AddRole(anonymousRole);
-                    }
+                //if (!GetRights(anonymousRole).Any())
+                //{
+                //    List<Rights> defaultRoleRights = GetDefaultRights(anonymousRole);
+                //    foreach (Rights rights in defaultRoleRights)
+                //    {
+                //        Right.rightsByFlag[rights].AddRole(anonymousRole);
+                //    }
 
-                    defaultsAdded = true;
-                }
+                //    defaultsAdded = true;
+                //}
 
                 // Check that the editor role is set up properly. If no rights
                 // are found, then the defaults need to be set.
