@@ -10,13 +10,13 @@
   <showdescriptioninpostlist>False</showdescriptioninpostlist>
   <commentsperpage>10</commentsperpage>
   <feedauthor />
-  <description>Short description of the blog</description>
+  <description>Udvalgte billeder og historier fra Asbjørns opvækst.</description>
   <enablepingbacksend>True</enablepingbacksend>
   <postoptionscustomfields>False</postoptionscustomfields>
   <enabletagexport>True</enabletagexport>
   <iscocommentenabled>False</iscocommentenabled>
   <compresswebresource>False</compresswebresource>
-  <endorsement>https://blogengine.io/syndication.axd</endorsement>
+  <endorsement />
   <themecookiename>theme</themecookiename>
   <remotefiledownloadtimeout>30000</remotefiledownloadtimeout>
   <trustauthenticatedusers>True</trustauthenticatedusers>
@@ -73,7 +73,7 @@
   <iscommentnestingenabled>True</iscommentnestingenabled>
   <timestamppostlinks>True</timestamppostlinks>
   <avatar>none</avatar>
-  <timezoneid>UTC</timezoneid>
+  <timezoneid>Romance Standard Time</timezoneid>
   <moderationtype>Auto</moderationtype>
   <enablerecaptchaoncontactform>False</enablerecaptchaoncontactform>
   <enableoptimization>False</enableoptimization>
