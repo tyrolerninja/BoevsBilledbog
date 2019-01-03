@@ -10,7 +10,7 @@
     <h1 class="account-title"><%=Resources.labels.passwordRetrieval %></h1>
     <div class="account-body">
         <div class="form-group with-icon first-child">
-            <label>Username</label>
+            <label>Email</label>
 
             <asp:TextBox ID="txtUser" runat="server" placeholder="" AutoCompleteType="None" CssClass="textEntry form-control "></asp:TextBox>
         </div>

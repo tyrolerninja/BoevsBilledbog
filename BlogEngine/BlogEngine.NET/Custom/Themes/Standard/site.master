@@ -49,9 +49,16 @@
                     </span>
                 </button>
             </nav>
+            <div>
+                <p>
+                    <br/>
+                    Velkommen til!<br/>Her deler vi billeder og historier af Asbjørns opvækst.
+                    Billederne må gerne vises til venner og bekendte, men ikke deles på sociale medier uden aftale med os. Tak :)<br/>
+                    - Jane og Christian
+                </p>
+            </div>
         </header>
         <!-- END HEADER -->
-
 
         <!-- START CONTENT -->
         <div class="container blog-content">

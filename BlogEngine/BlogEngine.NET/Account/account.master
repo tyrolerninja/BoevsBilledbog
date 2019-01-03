@@ -22,8 +22,8 @@
     <form id="Form1" runat="server">
         <div class="account">
             <div class="account-header text-center">
-                <a href="https://blogengine.io/" target="_blank">
-                    <img alt="BlogEngine.NET" src="../Content/images/blog/logo.png" /></a>
+                <h1>Asbjørns Billedbog</h1>
+                <p>Hvis du ikke har en bruger, så kontakt Jane eller Christian.</p>
             </div>
              <div id="StatusBox">
                     <div id="AdminStatus" runat="server" style="display: none"></div>

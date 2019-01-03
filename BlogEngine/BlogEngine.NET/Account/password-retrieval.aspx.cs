@@ -42,7 +42,8 @@
         {
             if (string.IsNullOrEmpty(_userName))
             {
-                var user = Membership.Provider.GetUser(this.txtUser.Text.Trim(), false);
+                var userName = Membership.Provider.GetUserNameByEmail(this.txtUser.Text.Trim());
+                var user = Membership.Provider.GetUser(userName, false);
                 if (user == null)
                 {
                     this.Master.SetStatus("warning", "User not found");
