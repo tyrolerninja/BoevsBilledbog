@@ -11,7 +11,7 @@
             </h1>
             <div class="account-body">
                 <div class="form-group">
-                    <label>Username</label>
+                    <label>Email</label>
                     <asp:TextBox ID="UserName" runat="server" AutoCompleteType="None" CssClass="textEntry ltr-dir"></asp:TextBox>
                 </div>
                 <div class="form-group">

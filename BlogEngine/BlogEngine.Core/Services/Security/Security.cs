@@ -136,6 +136,19 @@ namespace BlogEngine.Core
         }
 
         /// <summary>
+        /// Attempts to sign the user into the current blog instance by email.
+        /// </summary>
+        /// <param name="email"></param>
+        /// <param name="password"></param>
+        /// <param name="rememberMe"></param>
+        /// <returns></returns>
+        public static bool AuthenticateUserByEmail(string email, string password, bool rememberMe)
+        {
+            var username = Membership.Provider.GetUserNameByEmail(email.Trim());
+            return AuthenticateUser(username, password, rememberMe);
+        }
+
+        /// <summary>
         /// Attempts to sign the user into the current blog instance.
         /// </summary>
         /// <param name="username">The user's username.</param>

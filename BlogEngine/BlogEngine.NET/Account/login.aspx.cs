@@ -61,8 +61,7 @@
         {
             // always set to false
             e.Authenticated = false;
-
-            Security.AuthenticateUser(LoginUser.UserName, LoginUser.Password, LoginUser.RememberMeSet);
+            Security.AuthenticateUserByEmail(LoginUser.UserName, LoginUser.Password, LoginUser.RememberMeSet);
         }
 
         #endregion
