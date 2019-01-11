@@ -3,10 +3,10 @@
 <div class="comment-form well-global">
     <h3 class="well-global-title" id="addcomment"><%=Resources.labels.addComment %></h3>
     <div class="form-group">
-        <input type="text" class="form-control" placeholder="<%=Resources.labels.name %>" name="txtName" id="txtName" />
+        <input type="text" class="form-control" placeholder="<%=Resources.labels.name %>" name="txtName" id="txtName" disabled="disabled" value="<%= UserContext.CurrentUser %>" />
     </div>
     <div class="form-group">
-        <input type="text" placeholder="<%=Resources.labels.email %>" class="form-control" id="txtEmail" />
+        <input type="text" placeholder="<%=Resources.labels.email %>" class="form-control" id="txtEmail" disabled="disabled" value="<%= UserContext.CurrentEmail %>" />
     </div>
     <% if (BlogSettings.Instance.EnableWebsiteInComments)
         { %>

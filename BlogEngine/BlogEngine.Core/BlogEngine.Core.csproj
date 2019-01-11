@@ -272,6 +272,7 @@
     <Compile Include="Helpers\SavedEventArgs.cs" />
     <Compile Include="Services\Search\Search.cs" />
     <Compile Include="Services\Syndication\SyndicationFormat.cs" />
+    <Compile Include="UserContext.cs" />
     <Compile Include="Web\BlogCulture.cs" />
     <Compile Include="Web\Controls\ExtensionAttribute.cs" />
     <Compile Include="Web\Controls\CommentViewBase.cs">
