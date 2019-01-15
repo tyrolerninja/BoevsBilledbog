@@ -773,12 +773,30 @@
                     validated = this.CheckPassword(user.Comment, password);
                 }
 
+                if (validated)
+                {
+                    UpdateLastLoginTime(username);
+                }
+
                 return validated;
             }
             catch (Exception)
             {
                 return validated;
             }
+        }
+
+        private void UpdateLastLoginTime(string username)
+        {
+            var doc = new XmlDocument();
+            doc.Load(XmlFullyQualifiedPath);
+
+            var userNode = from XmlNode node in doc.SelectNodes("//User")
+                where node.ChildNodes[0].InnerText.Equals(username, StringComparison.OrdinalIgnoreCase)
+                           select node;
+            userNode.Single().ChildNodes[3].InnerText = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
+
+            doc.Save(XmlFullyQualifiedPath);
         }
 
         #endregion
