@@ -25,11 +25,11 @@
   <searchbuttontext>Search</searchbuttontext>
   <showincludecommentsoption>False</showincludecommentsoption>
   <createblogonselfregistration>False</createblogonselfregistration>
-  <enablewebsiteincomments>True</enablewebsiteincomments>
+  <enablewebsiteincomments>False</enablewebsiteincomments>
   <enablecontactattachments>False</enablecontactattachments>
   <blogrollmaxlength>23</blogrollmaxlength>
   <language>en-US</language>
-  <smtpserver>smtp.gmail.com</smtpserver>
+  <smtpserver>smtp.unoeuro.com</smtpserver>
   <disqusdevmode>False</disqusdevmode>
   <customfrontpage />
   <postsperpage>10</postsperpage>
@@ -39,12 +39,12 @@
   <useblognameinpagetitles>True</useblognameinpagetitles>
   <pageoptionsdescription>True</pageoptionsdescription>
   <removeextensionsfromurls>True</removeextensionsfromurls>
-  <smtpusername>youremail@gmail.com</smtpusername>
+  <smtpusername>asbjoernsbilledbog@kjaergaard-hansen.com</smtpusername>
   <enablepasswordreset>True</enablepasswordreset>
   <disqusaddcommentstopages>False</disqusaddcommentstopages>
   <alternatefeedurl />
   <errortitle>Ooops! An unexpected error has occurred.</errortitle>
-  <email>youremail@gmail.com</email>
+  <email>asbjoernsbilledbog@kjaergaard-hansen.com</email>
   <enabletrackbacksend>True</enabletrackbacksend>
   <showdescriptioninpostlistforpostsbytagorcategory>False</showdescriptioninpostlistforpostsbytagorcategory>
   <contacterrormessage>&lt;p&gt;This form does not work at the moment. Sorry for the inconvenience.&lt;/p&gt;</contacterrormessage>
@@ -55,12 +55,12 @@
   <handlewwwsubdomain />
   <commentprovider>BlogEngine</commentprovider>
   <postsperfeed>3</postsperfeed>
-  <sendmailoncomment>True</sendmailoncomment>
+  <sendmailoncomment>False</sendmailoncomment>
   <culture>da</culture>
   <remotemaxfilesize>524288</remotemaxfilesize>
   <redirecttoremovefileextension>False</redirecttoremovefileextension>
   <syndicationformat>Rss</syndicationformat>
-  <postoptionsslug>True</postoptionsslug>
+  <postoptionsslug>False</postoptionsslug>
   <blogrollvisibleposts>3</blogrollvisibleposts>
   <geocodinglatitude>0</geocodinglatitude>
   <pageoptionsslug>True</pageoptionsslug>
@@ -68,8 +68,8 @@
   <israzortheme>False</israzortheme>
   <iscommentsenabled>True</iscommentsenabled>
   <searchdefaulttext>Enter search term or APML url</searchdefaulttext>
-  <smtpserverport>587</smtpserverport>
-  <smtppassword>password</smtppassword>
+  <smtpserverport>25</smtpserverport>
+  <smtppassword>unsafe8655</smtppassword>
   <iscommentnestingenabled>True</iscommentnestingenabled>
   <timestamppostlinks>True</timestamppostlinks>
   <avatar>none</avatar>
