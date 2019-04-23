@@ -4,8 +4,8 @@ var PLURAL_CATEGORY = {ZERO: "zero", ONE: "one", TWO: "two", FEW: "few", MANY: "
 $provide.value("$locale", {
   "DATETIME_FORMATS": {
     "AMPMS": [
-      "e paradites",
-      "e pasdites"
+      "paradite",
+      "pasdite"
     ],
     "DAY": [
       "e diel",
@@ -16,15 +16,6 @@ $provide.value("$locale", {
       "e premte",
       "e shtun\u00eb"
     ],
-    "ERANAMES": [
-      "para Krishtit",
-      "mbas Krishtit"
-    ],
-    "ERAS": [
-      "p.K.",
-      "mb.K."
-    ],
-    "FIRSTDAYOFWEEK": 0,
     "MONTH": [
       "janar",
       "shkurt",
@@ -49,45 +40,27 @@ $provide.value("$locale", {
       "Sht"
     ],
     "SHORTMONTH": [
-      "jan",
-      "shk",
-      "mar",
-      "pri",
-      "maj",
-      "qer",
-      "kor",
-      "gsh",
-      "sht",
-      "tet",
-      "n\u00ebn",
-      "dhj"
-    ],
-    "STANDALONEMONTH": [
-      "Janar",
-      "Shkurt",
-      "Mars",
-      "Prill",
+      "Jan",
+      "Shk",
+      "Mar",
+      "Pri",
       "Maj",
-      "Qershor",
-      "Korrik",
-      "Gusht",
-      "Shtator",
-      "Tetor",
-      "N\u00ebntor",
-      "Dhjetor"
+      "Qer",
+      "Kor",
+      "Gsh",
+      "Sht",
+      "Tet",
+      "N\u00ebn",
+      "Dhj"
     ],
-    "WEEKENDRANGE": [
-      5,
-      6
-    ],
-    "fullDate": "EEEE, d MMMM y",
-    "longDate": "d MMMM y",
-    "medium": "d MMM y h:mm:ss a",
-    "mediumDate": "d MMM y",
-    "mediumTime": "h:mm:ss a",
-    "short": "d.M.yy h:mm a",
-    "shortDate": "d.M.yy",
-    "shortTime": "h:mm a"
+    "fullDate": "EEEE, dd MMMM y",
+    "longDate": "dd MMMM y",
+    "medium": "dd/MM/y HH:mm:ss",
+    "mediumDate": "dd/MM/y",
+    "mediumTime": "HH:mm:ss",
+    "short": "dd/MM/yy HH:mm",
+    "shortDate": "dd/MM/yy",
+    "shortTime": "HH:mm"
   },
   "NUMBER_FORMATS": {
     "CURRENCY_SYM": "Lek",
@@ -108,8 +81,8 @@ $provide.value("$locale", {
       {
         "gSize": 3,
         "lgSize": 3,
-        "maxFrac": 0,
-        "minFrac": 0,
+        "maxFrac": 2,
+        "minFrac": 2,
         "minInt": 1,
         "negPre": "-",
         "negSuf": "\u00a0\u00a4",
@@ -119,7 +92,6 @@ $provide.value("$locale", {
     ]
   },
   "id": "sq-al",
-  "localeID": "sq_AL",
-  "pluralCat": function(n, opt_precision) {  if (n == 1) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
+  "pluralCat": function (n, opt_precision) {  if (n == 1) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

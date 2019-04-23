@@ -4,8 +4,8 @@ var PLURAL_CATEGORY = {ZERO: "zero", ONE: "one", TWO: "two", FEW: "few", MANY: "
 $provide.value("$locale", {
   "DATETIME_FORMATS": {
     "AMPMS": [
-      "TO",
-      "TK"
+      "AM",
+      "PM"
     ],
     "DAY": [
       "yakshanba",
@@ -16,53 +16,7 @@ $provide.value("$locale", {
       "juma",
       "shanba"
     ],
-    "ERANAMES": [
-      "miloddan avvalgi",
-      "milodiy"
-    ],
-    "ERAS": [
-      "m.a.",
-      "milodiy"
-    ],
-    "FIRSTDAYOFWEEK": 0,
     "MONTH": [
-      "yanvar",
-      "fevral",
-      "mart",
-      "aprel",
-      "may",
-      "iyun",
-      "iyul",
-      "avgust",
-      "sentabr",
-      "oktabr",
-      "noyabr",
-      "dekabr"
-    ],
-    "SHORTDAY": [
-      "Yak",
-      "Dush",
-      "Sesh",
-      "Chor",
-      "Pay",
-      "Jum",
-      "Shan"
-    ],
-    "SHORTMONTH": [
-      "yan",
-      "fev",
-      "mar",
-      "apr",
-      "may",
-      "iyn",
-      "iyl",
-      "avg",
-      "sen",
-      "okt",
-      "noy",
-      "dek"
-    ],
-    "STANDALONEMONTH": [
       "Yanvar",
       "Fevral",
       "Mart",
@@ -71,22 +25,41 @@ $provide.value("$locale", {
       "Iyun",
       "Iyul",
       "Avgust",
-      "Sentabr",
-      "Oktabr",
+      "Sentyabr",
+      "Oktyabr",
       "Noyabr",
       "Dekabr"
     ],
-    "WEEKENDRANGE": [
-      5,
-      6
+    "SHORTDAY": [
+      "Yaksh",
+      "Dush",
+      "Sesh",
+      "Chor",
+      "Pay",
+      "Jum",
+      "Shan"
     ],
-    "fullDate": "EEEE, d-MMMM, y",
-    "longDate": "d-MMMM, y",
-    "medium": "d-MMM, y HH:mm:ss",
-    "mediumDate": "d-MMM, y",
+    "SHORTMONTH": [
+      "Yanv",
+      "Fev",
+      "Mar",
+      "Apr",
+      "May",
+      "Iyun",
+      "Iyul",
+      "Avg",
+      "Sen",
+      "Okt",
+      "Noya",
+      "Dek"
+    ],
+    "fullDate": "EEEE, y MMMM dd",
+    "longDate": "y MMMM d",
+    "medium": "y MMM d HH:mm:ss",
+    "mediumDate": "y MMM d",
     "mediumTime": "HH:mm:ss",
-    "short": "dd/MM/yy HH:mm",
-    "shortDate": "dd/MM/yy",
+    "short": "yy/MM/dd HH:mm",
+    "shortDate": "yy/MM/dd",
     "shortTime": "HH:mm"
   },
   "NUMBER_FORMATS": {
@@ -108,18 +81,17 @@ $provide.value("$locale", {
       {
         "gSize": 3,
         "lgSize": 3,
-        "maxFrac": 0,
-        "minFrac": 0,
+        "maxFrac": 2,
+        "minFrac": 2,
         "minInt": 1,
-        "negPre": "-",
-        "negSuf": "\u00a0\u00a4",
-        "posPre": "",
-        "posSuf": "\u00a0\u00a4"
+        "negPre": "\u00a4\u00a0-",
+        "negSuf": "",
+        "posPre": "\u00a4\u00a0",
+        "posSuf": ""
       }
     ]
   },
   "id": "uz-latn-uz",
-  "localeID": "uz_Latn_UZ",
-  "pluralCat": function(n, opt_precision) {  if (n == 1) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
+  "pluralCat": function (n, opt_precision) {  if (n == 1) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);

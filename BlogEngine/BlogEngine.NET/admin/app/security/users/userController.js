@@ -7,7 +7,7 @@
     $scope.security = $rootScope.security;
 
     $scope.load = function () {
-        if (!$scope.security.canManageUsers === true) {
+        if (!$scope.security.canManageUsers == true) {
             window.location.replace("../Account/Login.aspx");
         }
         dataService.getItems('/api/users', { take: 0, skip: 0, filter: "1 == 1", order: "UserName" })

@@ -34,15 +34,6 @@ $provide.value("$locale", {
       "piektdiena",
       "sestdiena"
     ],
-    "ERANAMES": [
-      "pirms m\u016bsu \u0113ras",
-      "m\u016bsu \u0113r\u0101"
-    ],
-    "ERAS": [
-      "p.m.\u0113.",
-      "m.\u0113."
-    ],
-    "FIRSTDAYOFWEEK": 0,
     "MONTH": [
       "janv\u0101ris",
       "febru\u0101ris",
@@ -58,13 +49,13 @@ $provide.value("$locale", {
       "decembris"
     ],
     "SHORTDAY": [
-      "sv\u0113td.",
-      "pirmd.",
-      "otrd.",
-      "tre\u0161d.",
-      "ceturtd.",
-      "piektd.",
-      "sestd."
+      "Sv",
+      "Pr",
+      "Ot",
+      "Tr",
+      "Ce",
+      "Pk",
+      "Se"
     ],
     "SHORTMONTH": [
       "janv.",
@@ -79,24 +70,6 @@ $provide.value("$locale", {
       "okt.",
       "nov.",
       "dec."
-    ],
-    "STANDALONEMONTH": [
-      "janv\u0101ris",
-      "febru\u0101ris",
-      "marts",
-      "apr\u012blis",
-      "maijs",
-      "j\u016bnijs",
-      "j\u016blijs",
-      "augusts",
-      "septembris",
-      "oktobris",
-      "novembris",
-      "decembris"
-    ],
-    "WEEKENDRANGE": [
-      5,
-      6
     ],
     "fullDate": "EEEE, y. 'gada' d. MMMM",
     "longDate": "y. 'gada' d. MMMM",
@@ -129,15 +102,14 @@ $provide.value("$locale", {
         "maxFrac": 2,
         "minFrac": 2,
         "minInt": 1,
-        "negPre": "-",
-        "negSuf": "\u00a0\u00a4",
-        "posPre": "",
-        "posSuf": "\u00a0\u00a4"
+        "negPre": "\u00a4-",
+        "negSuf": "",
+        "posPre": "\u00a4",
+        "posSuf": ""
       }
     ]
   },
   "id": "lv",
-  "localeID": "lv",
-  "pluralCat": function(n, opt_precision) {  var vf = getVF(n, opt_precision);  if (n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19 || vf.v == 2 && vf.f % 100 >= 11 && vf.f % 100 <= 19) {    return PLURAL_CATEGORY.ZERO;  }  if (n % 10 == 1 && n % 100 != 11 || vf.v == 2 && vf.f % 10 == 1 && vf.f % 100 != 11 || vf.v != 2 && vf.f % 10 == 1) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
+  "pluralCat": function (n, opt_precision) {  var vf = getVF(n, opt_precision);  if (n % 10 == 0 || n % 100 >= 11 && n % 100 <= 19 || vf.v == 2 && vf.f % 100 >= 11 && vf.f % 100 <= 19) {    return PLURAL_CATEGORY.ZERO;  }  if (n % 10 == 1 && n % 100 != 11 || vf.v == 2 && vf.f % 10 == 1 && vf.f % 100 != 11 || vf.v != 2 && vf.f % 10 == 1) {    return PLURAL_CATEGORY.ONE;  }  return PLURAL_CATEGORY.OTHER;}
 });
 }]);
