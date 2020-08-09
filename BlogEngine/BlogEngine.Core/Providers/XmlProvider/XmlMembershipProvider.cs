@@ -678,7 +678,7 @@
             foreach (var node in
                 nodes.Cast<XmlNode>().Where(
                     node =>
-                    node["UserName"].InnerText.Equals(username, StringComparison.OrdinalIgnoreCase) &&
+                    node["Email"].InnerText.Equals(username, StringComparison.OrdinalIgnoreCase) &&
                     !string.IsNullOrEmpty(node["Password"].InnerText)))
             {
                 string passwordPrep;
