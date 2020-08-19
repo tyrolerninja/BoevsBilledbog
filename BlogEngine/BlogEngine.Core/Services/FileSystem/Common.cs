@@ -22,6 +22,7 @@ namespace BlogEngine.Core.FileSystem
         public string FileSize { get; set; }
         public FileType FileType { get; set; }
         public string FullPath { get; set; }
+
         /// <summary>
         /// Image assosiated with file extension
         /// </summary>
@@ -71,6 +72,7 @@ namespace BlogEngine.Core.FileSystem
         Directory,
         File,
         Image,
+        Video,
         None
     }
 }

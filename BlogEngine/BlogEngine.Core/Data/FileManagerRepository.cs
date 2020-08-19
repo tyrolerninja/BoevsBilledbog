@@ -48,14 +48,41 @@ namespace BlogEngine.Core.Data
 
 
             foreach (var file in directory.Files)
-                list.Add(new FileInstance()
+            {
+                if (file.IsImage)
                 {
-                    FileSize = file.FileSizeFormat,
-                    Created = file.DateCreated.ToString(),
-                    FileType = file.IsImage ? FileType.Image : FileType.File,
-                    FullPath = file.FilePath,
-                    Name = file.Name
-                });
+                    list.Add(new FileInstance()
+                    {
+                        FileSize = file.FileSizeFormat,
+                        Created = file.DateCreated.ToString(),
+                        FileType = FileType.Image,
+                        FullPath = file.FilePath,
+                        Name = file.Name
+                    });
+                }
+                else if (file.IsVideo)
+                {
+                    list.Add(new FileInstance()
+                    {
+                        FileSize = file.FileSizeFormat,
+                        Created = file.DateCreated.ToString(),
+                        FileType = FileType.Video,
+                        FullPath = file.FullPath.Substring(2),
+                        Name = file.Name
+                    });
+                }
+                else
+                {
+                    list.Add(new FileInstance()
+                    {
+                        FileSize = file.FileSizeFormat,
+                        Created = file.DateCreated.ToString(),
+                        FileType = FileType.File,
+                        FullPath = file.FilePath,
+                        Name = file.Name
+                    });
+                }
+            }
 
             for (int i = 0; i < list.Count; i++)
             {

@@ -51,6 +51,11 @@ namespace BlogEngine.Core.FileSystem
         /// list of valid image extensions
         /// </summary>
         private string[] ImageExtensnios = { ".jpg", ".png", ".jpeg", ".tiff", ".gif", ".bmp" };
+
+        /// <summary>
+        /// list of valid video extensions
+        /// </summary>
+        private string[] VideoExtensions = { ".mp4" };
         #endregion
 
         #region Properties
@@ -238,6 +243,17 @@ namespace BlogEngine.Core.FileSystem
             get
             {
                 return ImageExtensnios.Any(x => x.ToLower() == this.Extension.ToLower());
+            }
+        }
+
+        /// <summary>
+        /// valdidates if this object is a video
+        /// </summary>
+        public bool IsVideo
+        {
+            get
+            {
+                return VideoExtensions.Any(x => x.ToLower() == this.Extension.ToLower());
             }
         }
 

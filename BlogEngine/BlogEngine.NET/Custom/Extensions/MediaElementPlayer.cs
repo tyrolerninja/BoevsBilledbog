@@ -194,6 +194,7 @@ $(document).ready(function($) {
 		// path to media
         string folder = Settings.GetSingleValue("folder");			
 		string path = Utils.RelativeWebRoot + folder.TrimEnd(new char[] {'/'}) + "/";
+        path = path == "//" ? "/" : path; // If path is "//" replace with "/" for videos to work.
 		
 		// override for feed
 		if (e.Location == ServingLocation.Feed) {

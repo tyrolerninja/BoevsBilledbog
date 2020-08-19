@@ -139,7 +139,11 @@
 
     $scope.insertFile = function (file) {
         var s = "<img src='" + SiteVars.RelativeWebRoot + "image.axd?picture=" + file.FullPath + "' />";
-        if (file.FileType != 2) {
+        if (file.FileType == 3) {
+            // Handle video file
+            s = "[video src=\"" + file.FullPath + "\" width=\"800\"]";
+        }
+        else if (file.FileType != 2) {
             // not a picture, insert as attachement
             s = "<p><a class=\"download\" href=\"" + SiteVars.RelativeWebRoot + "file.axd?file=" +
                 file.FullPath + "\" alt=\"" + file.Name + "\">" + file.Name + " (" + file.FileSize + ")</a></p>";

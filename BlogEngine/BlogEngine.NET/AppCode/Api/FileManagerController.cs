@@ -3,6 +3,7 @@ using BlogEngine.Core.FileSystem;
 using BlogEngine.Core.Providers;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -18,7 +19,8 @@ public class FileManagerController : ApiController
 
     public IEnumerable<FileInstance> Get(int take = 10, int skip = 0, string path = "", string order = "")
     {
-        return repository.Find(take, skip, path, order);
+        var files = repository.Find(take, skip, path, order);
+        return files;
     }
 
     [HttpPut]
@@ -37,6 +39,9 @@ public class FileManagerController : ApiController
                 {
                     if(item.FileType == FileType.File || item.FileType == FileType.Image)
                         BlogService.DeleteFile(item.FullPath);
+
+                    if(item.FileType == FileType.Video)
+                        BlogService.DeleteFile(item.FullPath.Replace("App_Data/files",""));
 
                     if (item.FileType == FileType.Directory)
                         BlogService.DeleteDirectory(item.FullPath);

@@ -1,9 +1,10 @@
 ﻿using App_Code;
 using BlogEngine.Core;
-using BlogEngine.Core.API.BlogML;
 using BlogEngine.Core.Providers;
 using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -20,9 +21,9 @@ public class UploadController : ApiController
         HttpPostedFile file = HttpContext.Current.Request.Files[0];
         action = action.ToLowerInvariant();
 
-        if (file != null && file.ContentLength > 0)
+        if (file.ContentLength > 0)
         {
-            var dirName = string.Format("/{0}/{1}", DateTime.Now.ToString("yyyy"), DateTime.Now.ToString("MM"));
+            var dirName = $"/{DateTime.Now.ToString("yyyy")}/{DateTime.Now.ToString("MM")}";
             var fileName = new FileInfo(file.FileName).Name; // to work in IE and others
 
             // iOS sends all images as "image.jpg" or "image.png"
@@ -34,24 +35,19 @@ public class UploadController : ApiController
 
             if (action == "filemgr" || action == "file")
             {
-                string[] ImageExtensnios = { ".jpg", ".png", ".jpeg", ".tiff", ".gif", ".bmp" };
+                string[] imageExtentions = { ".jpg", ".png", ".jpeg", ".tiff", ".gif", ".bmp"};
+                string[] videoExtentions = { ".mp4" };
 
-                if (ImageExtensnios.Any(x => fileName.ToLower().Contains(x.ToLower())))
+                if (imageExtentions.Any(x => fileName.ToLower().Contains(x.ToLower())))
                     action = "image";
+                else if (videoExtentions.Any(x => fileName.ToLower().Contains(x.ToLower())))
+                    action = "video";
                 else
                     action = "file";
             }
 
-            var dir = new BlogEngine.Core.FileSystem.Directory();
-            var retUrl = "";
+            BlogEngine.Core.FileSystem.Directory dir;
 
-            if (action == "import")
-            {
-                if (Security.IsAdministrator)
-                {
-                    return ImportBlogML();
-                }
-            } 
             if (action == "profile")
             {
                 if (Security.IsAuthorizedTo(Rights.EditOwnUser))
@@ -75,17 +71,20 @@ public class UploadController : ApiController
                 if (Security.IsAuthorizedTo(Rights.EditOwnPosts))
                 {
                     dir = BlogService.GetDirectory(dirName);
-                    var uploaded = BlogService.UploadFile(file.InputStream, fileName, dir, true);
+                    var image = Image.FromStream(file.InputStream);
+                    var imageAsByteArray = ResizeImage(image, 1000);
+                    //image.NormalizeOrientation();
+                    var uploaded = BlogService.UploadFile(imageAsByteArray, fileName, dir, true);
                     return Request.CreateResponse(HttpStatusCode.Created, uploaded.AsImage.ImageUrl);
                 }
             }
             if (action == "file")
             {
-                if (Security.IsAuthorizedTo(Rights.EditOwnPosts)) 
+                if (Security.IsAuthorizedTo(Rights.EditOwnPosts))
                 {
                     dir = BlogService.GetDirectory(dirName);
                     var uploaded = BlogService.UploadFile(file.InputStream, fileName, dir, true);
-                    retUrl = uploaded.FileDownloadPath + "|" + fileName + " (" + BytesToString(uploaded.FileSize) + ")";
+                    var retUrl = uploaded.FileDownloadPath + "|" + fileName + " (" + BytesToString(uploaded.FileSize) + ")";
                     return Request.CreateResponse(HttpStatusCode.Created, retUrl);
                 }
             }
@@ -93,17 +92,9 @@ public class UploadController : ApiController
             {
                 if (Security.IsAuthorizedTo(Rights.EditOwnPosts))
                 {
-                    // default media folder
-                    var mediaFolder = "Custom/Media";
+                    dir = BlogService.GetDirectory(dirName);
 
-                    // get the mediaplayer extension and use it's folder
-                    var mediaPlayerExtension = BlogEngine.Core.Web.Extensions.ExtensionManager.GetExtension("MediaElementPlayer");
-                    mediaFolder = mediaPlayerExtension.Settings[0].GetSingleValue("folder");
-
-                    var folder = Utils.ApplicationRelativeWebRoot + mediaFolder + "/";
-                    //var fileName = file.FileName;
-
-                    UploadVideo(folder, file, fileName);
+                    UploadVideo(dir.FullPath, file, fileName);
 
                     return Request.CreateResponse(HttpStatusCode.Created, fileName);
                 }
@@ -113,25 +104,45 @@ public class UploadController : ApiController
     }
 
     #region Private methods
-
-    HttpResponseMessage ImportBlogML()
+    private static byte[] ResizeImage(Image image, int width)
     {
-        HttpPostedFile file = HttpContext.Current.Request.Files[0];
-        if (file != null && file.ContentLength > 0)
+        using (var ms = new MemoryStream())
         {
-            var reader = new BlogReader();
-            var rdr = new StreamReader(file.InputStream);
-            reader.XmlData = rdr.ReadToEnd();
-
-            if (reader.Import())
+            if (image.Width <= 1000)
             {
-                return Request.CreateResponse(HttpStatusCode.OK);
+                image.Save(ms, ImageFormat.Jpeg);
+                return ms.ToArray();
             }
+
+            var aspectRatio = ((decimal)image.Width / image.Height);
+            var height = Convert.ToInt32(Math.Floor(width / aspectRatio));
+
+            var destRect = new Rectangle(0, 0, width, height);
+            var destImage = new Bitmap(width, height);
+
+            destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+
+            using (var graphics = Graphics.FromImage(destImage))
+            {
+                graphics.CompositingMode = CompositingMode.SourceCopy;
+                graphics.CompositingQuality = CompositingQuality.HighQuality;
+                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                graphics.SmoothingMode = SmoothingMode.HighQuality;
+                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+
+                using (var wrapMode = new ImageAttributes())
+                {
+                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                    graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
+                }
+            }
+            
+            destImage.Save(ms, ImageFormat.Jpeg);
+            return ms.ToArray();
         }
-        return Request.CreateResponse(HttpStatusCode.InternalServerError);
     }
 
-    static String BytesToString(long byteCount)
+    private static string BytesToString(long byteCount)
     {
         string[] suf = { "B", "KB", "MB", "GB", "TB", "PB", "EB" };
         if (byteCount == 0)
@@ -139,17 +150,18 @@ public class UploadController : ApiController
         long bytes = Math.Abs(byteCount);
         int place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
         double num = Math.Round(bytes / Math.Pow(1024, place), 1);
-        return (Math.Sign(byteCount) * num).ToString() + suf[place];
+        return (Math.Sign(byteCount) * num) + suf[place];
     }
 
-    private void UploadVideo(string virtualFolder, HttpPostedFile file, string fileName)
+    private static void UploadVideo(string virtualFolder, HttpPostedFile file, string fileName)
     {
         var folder = HttpContext.Current.Server.MapPath(virtualFolder);
         if (!Directory.Exists(folder))
         {
             Directory.CreateDirectory(folder);
         }
-        file.SaveAs(folder + fileName);
+        
+        file.SaveAs($"{folder}/{fileName}");
     }
 
     #endregion
