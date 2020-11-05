@@ -1,4 +1,6 @@
-﻿namespace BlogEngine.Core
+﻿using Microsoft.Ajax.Utilities;
+
+namespace BlogEngine.Core
 {
     using System;
     using System.Collections.Generic;
@@ -910,6 +912,20 @@
                 var types = a.GetTypes();
                 
                 Type extensionsAttribute = typeof(ExtensionAttribute);
+
+                //foreach (var type in types)
+                //{
+                //    var attributes = type.GetCustomAttributes(extensionsAttribute, false);
+                //    foreach (var attribute in attributes)
+                //    {
+                //        var attrType = attribute.GetType();
+                //        if (attrType == extensionsAttribute)
+                //        {
+                //            var ext = (ExtensionAttribute) attribute;
+                //            sortedExtensions.Add(new SortedExtension(ext.Priority, type.Name, type.FullName));
+                //        }
+                //    }
+                //}
 
                 sortedExtensions.AddRange(
                     from type in types

@@ -31,7 +31,7 @@ public class MediaElementPlayer
     private const int _widthDefault = 480;
     private const int _heightDefault = 360;
 	private const bool _enableAutoSize = false;
-    private const string _folderDefault = "Custom/Media";
+    private const string _folderDefault = "";
 
     /// <summary>
     /// Adds a Flash video player to the post.
@@ -192,7 +192,7 @@ $(document).ready(function($) {
     {
 	
 		// path to media
-        string folder = Settings.GetSingleValue("folder");			
+        string folder = "";//Settings.GetSingleValue("folder");			
 		string path = Utils.RelativeWebRoot + folder.TrimEnd(new char[] {'/'}) + "/";
         path = path == "//" ? "/" : path; // If path is "//" replace with "/" for videos to work.
 		
@@ -246,7 +246,7 @@ $(document).ready(function($) {
 
 		// get the main tag [tag attr="value"]
 		string find = @"\[(?<tag>" + regexMatchString + @")(?<attrs>[^\]]+)\]";
-		if (removeParagraphs) {
+		if (!removeParagraphs) {
 			find = @"(<p>[\s\n]?)+" + find + @"([\s\n]?</p>)+";
 		}
 				
